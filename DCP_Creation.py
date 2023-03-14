@@ -74,6 +74,8 @@ def create_amp(root_directory, uuid_mapping):
             file_element_amp = ET.SubElement(subDirectory_element_amp,"Asset")
             ET.SubElement(file_element_amp,"Id").text = "urn:uuid:"+file_uuid
             ET.SubElement(file_element_amp, "AnnotationText").text = file
+            if "PKL" in str(file):
+                ET.SubElement(file_element_amp, "PackingList").text = 'true'
             chunk_element = ET.SubElement(file_element_amp,"ChunkList")
             chunkList_element = ET.SubElement(chunk_element,"Chunk")
             ET.SubElement(chunkList_element,"Path").text = file_path
