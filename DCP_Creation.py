@@ -26,7 +26,7 @@ def create_pkl(root_directory, uuid_mapping):
     ET.SubElement(root_pkl,"AnnotationText").text = dir_name
     ET.SubElement(root_pkl,"IssueDate").text = dir_date
     ET.SubElement(root_pkl,"Issuer").text = "Gowtham S S"
-    ET.SubElement(root_pkl,"Creator").text = "Qube"
+    ET.SubElement(root_pkl,"Creator").text = "Qube"  
 
     for subDirectory, directories, files in os.walk(root_directory):
         subDirectory_element_pkl = ET.SubElement(root_pkl,"AssetList")
