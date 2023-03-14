@@ -58,9 +58,11 @@ def create_amp(root_directory, uuid_mapping):
 
     ET.SubElement(root_amp,"Id").text = "urn:uuid:"+dir_uuid
     ET.SubElement(root_amp,"AnnotationText").text = dir_name
+    ET.SubElement(root_amp,"Creator").text = "Qube"
+    ET.SubElement(root_amp,"VolumeCount").text = "1"
     ET.SubElement(root_amp,"IssueDate").text = dir_date
     ET.SubElement(root_amp,"Issuer").text = "Gowtham S S"
-    ET.SubElement(root_amp,"Creator").text = "Qube"
+    
 
     for subDirectory, directories, files in os.walk(root_directory):
         subDirectory_element_amp = ET.SubElement(root_amp,"AssetList")
