@@ -43,7 +43,7 @@ def create_pkl(root_directory, uuid_mapping):
             ET.SubElement(file_element_pkl,"Id").text = "urn:uuid:"+file_uuid
             ET.SubElement(file_element_pkl, "AnnotationText").text = file
             ET.SubElement(file_element_pkl, "Hash").text = file_hash
-            ET.SubElement(file_element_pkl, "size").text = str(file_size)
+            ET.SubElement(file_element_pkl, "Size").text = str(file_size)
             ET.SubElement(file_element_pkl, "Type").text = file_type
     tree_pkl = ET.ElementTree(root_pkl)
     tree_pkl.write(pkl_path, encoding="utf-8", xml_declaration=True, short_empty_elements=False)
